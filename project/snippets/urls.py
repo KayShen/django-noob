@@ -1,5 +1,8 @@
 from django.conf.urls import url, include
+from rest_framework import routers
+from project.snippets import views
 
 urlpatterns = [
-    url(r'^', include('snippets.urls')),
+    url(r'^snippets/$', views.snippet_list),
+    url(r'^snippets/(?P<pk>[0-9]+)/$', views.snippet_detail),
 ]
